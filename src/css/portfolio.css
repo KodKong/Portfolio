@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Inconsolata&display=swap');
+*
+{
+    font-family: 'Inconsolata', monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 35px 40px 0px 40px;
+    z-index: 10000;
+    transition: 0.6s;
+    
+}
+header .logo
+{
+    position: relative;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff; 
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+header #toggle
+{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer; 
+}
+
+header #toggle:before
+{
+    content: '';
+    position: absolute;
+    bottom: 7px; 
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+}
+
+header #toggle:after
+{
+    content: '';
+    position: absolute;
+    top: 7px; 
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+}
+
+.banner_portfolio
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px; 
+    background-image: url(../images/bg2.jpg);
+    background-attachment: fixed; 
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 2;
+}
+.banner_portfolio.active
+{
+    transform: translate(-400px);
+}
+.banner_portfolio.active header #toggle:before
+{
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.banner_portfolio.active header #toggle:after
+{
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.works
+{
+    margin: auto;
+}
+.works h2
+{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.work
+{
+    margin-top: 40px;
+    max-width: 1280px;
+    max-height: 1280px;
+}
+.slider
+{
+   position: relative;
+}
+.slider img 
+{
+    max-width: 1280px;
+    max-height: 640px;
+    border-radius: 10px;
+}
+.description
+{
+   display: none;
+}
+.arrow-left 
+{
+    position: absolute;
+    top: 45%; 
+    left: 40px; 
+    font-size: 4em;
+    
+}
+.arrow-right 
+{
+    position: absolute;
+    top: 45%; 
+    right: 40px; 
+    font-size: 4em;
+}
+#navigation
+{
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 400px;
+    height: 100vh;
+    background-color: #3777ff;
+    z-index: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.5s;
+}
+#navigation.active
+{
+    right: 0;
+}
+#navigation ul
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+#navigation ul li 
+{
+    font-family: 'Heebo', sans-serif;
+    list-style: none;
+}
+#navigation ul li a
+{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+@media (max-width: 830px)
+{
+    header
+    {
+        padding: 20px 50px;
+    }
+    .banner_portfolio{
+        padding: 100px 50px 150px;
+    }
+    .banner_portfolio h2
+    {
+        font-size: 1.8em;
+    }
+    .banner_portfolio p
+    {
+        font-size: 1em;
+    }
+    .banner_portfolio.active
+    {
+        transform: translateX(-250px);
+    }
+    #navigation
+    {
+        width: 250px;
+    }
+    #navigation ul li a 
+    {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+
+}
+@media (max-width: 1278px)
+{
+    .slider img 
+    {
+        display: none;
+    }
+    .arrow-left, .arrow-right
+    {
+        display: none;
+    } 
+    .description
+    {
+        display: inline-block;
+        max-width: 800px;
+        text-align: center;
+        margin: auto;
+        font-weight: 900;
+        font-size: 20px;
+      
+    }
+}
+
+
+
